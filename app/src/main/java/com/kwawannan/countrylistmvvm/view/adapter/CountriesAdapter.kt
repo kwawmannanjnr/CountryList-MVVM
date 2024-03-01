@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.kwawannan.countrylistmvvm.Network.model.Countries
 import com.kwawannan.countrylistmvvm.Network.model.Country
 import com.kwawannan.countrylistmvvm.R
@@ -31,9 +32,10 @@ class CountriesAdapter(private val countries : Countries): RecyclerView.Adapter<
         fun bind(country: Country) {
              // I used Glide to load the flag image from URL
 
-//            Glide.with(itemView.context)
-//                .load(country.flag)
-//                .into(flagImageView) nameTextView.text = country.name
+            Glide.with(itemView.context)
+                .load(country.flag)
+                .into(flagImageView)
+            nameTextView.text = country.name
             capitalTextView.text = country.capital
         }
     }
