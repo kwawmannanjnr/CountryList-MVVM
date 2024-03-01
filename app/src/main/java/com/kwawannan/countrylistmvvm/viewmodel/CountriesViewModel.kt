@@ -1,4 +1,4 @@
-package com.kwawannan.countrylistmvvm.Network.model.viewmodel
+package com.kwawannan.countrylistmvvm.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.kwawannan.countrylistmvvm.Network.model.Countries
-import com.kwawannan.countrylistmvvm.Network.model.repository.CountriesRepository
+import com.kwawannan.countrylistmvvm.Network.repository.CountriesRepository
 import kotlinx.coroutines.launch
 
 class CountriesViewModel(private val repository: CountriesRepository): ViewModel()  {
