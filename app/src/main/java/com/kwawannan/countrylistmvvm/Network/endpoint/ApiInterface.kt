@@ -1,4 +1,4 @@
-package com.kwawannan.countrylistmvvm.Network.model.endpoint
+package com.kwawannan.countrylistmvvm.Network.endpoint
 
 import com.kwawannan.countrylistmvvm.Network.model.Countries
 import retrofit2.Response
