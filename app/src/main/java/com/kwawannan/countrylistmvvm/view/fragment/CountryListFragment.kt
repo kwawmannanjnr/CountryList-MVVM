@@ -37,34 +37,19 @@ class CountriesFragment : Fragment() {
         view.findViewById<RecyclerView>(R.id.countriesRecyclerView).apply {
             layoutManager = LinearLayoutManager(context)
             adapter = countriesAdapter
-        }
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://gist.githubusercontent.com/peymano-\n" +
-                    "wmt/") //base URL
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val countriesApi = retrofit.create(CountriesApi::class.java)
-
-//        val repository = CountriesRepository(countriesApi)
-////        val viewModelFactory = CountriesViewModelFactory(repository)
-////        val viewModel = ViewModelProvider(this, viewModelFactory).get(CountriesViewModel::class.java)
-//
-//        viewModel = ViewModelProvider(this).get(CountriesViewModel(repository)::class.java)
-////        viewModel = ViewModelProvider(this, CountriesViewModelFactory(repository)).get(CountriesViewModel::class.java)
-//
-//        viewModel.countries.observe(viewLifecycleOwner, Observer { countries ->
-//            countriesAdapter.submitList(countries)
-//        })
-//        viewModel.fetchCountries()
-
-        countriesAdapter = CountriesAdapter()
-        view.findViewById<RecyclerView>(R.id.countriesRecyclerView).apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = countriesAdapter
+            countriesAdapter = CountriesAdapter()
+            view.findViewById<RecyclerView>(R.id.countriesRecyclerView).apply {
+                layoutManager = LinearLayoutManager(context)
+                adapter = countriesAdapter
+            }
         }
 
-        val repository = CountriesRepository() // Assuming default constructor
+        val repository = CountriesRepository()
+        initViewModel(repository = repository)
+
+    }
+
+    fun initViewModel(repository: CountriesRepository){
         val viewModelFactory = CountriesViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(CountriesViewModel::class.java)
 

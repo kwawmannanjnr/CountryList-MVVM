@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitServiceProvider {
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://gist.githubusercontent.com/peymano-wmt/") // Correct base URL
+        .baseUrl("https://gist.githubusercontent.com/peymano-wmt/") // base URL
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
